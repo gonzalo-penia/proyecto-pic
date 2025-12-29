@@ -168,12 +168,14 @@ pnpm -r exec <comando>
 ## 🌐 Variables de Entorno
 
 ### Frontend (.env)
+
 ```bash
 cp apps/frontend/.env.example apps/frontend/.env
 # Editar apps/frontend/.env con tus valores
 ```
 
 ### Backend (.env)
+
 ```bash
 cp apps/backend/.env.example apps/backend/.env
 # Editar apps/backend/.env con tus valores

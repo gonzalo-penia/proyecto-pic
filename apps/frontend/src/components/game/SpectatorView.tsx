@@ -24,8 +24,9 @@ export function SpectatorView({
   hasWord,
 }: SpectatorViewProps) {
   return (
-    <div className="flex flex-col items-center gap-8 p-8">
-      <div className="text-center">
+    <div className="bg-white rounded-xl shadow-xl p-8 mx-4 my-4">
+      <div className="flex flex-col items-center gap-8 p-8">
+      <div className="text-center bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-purple-600 mb-2">Observando el turno</h2>
         <p className="text-gray-600">Espera tu turno para jugar</p>
       </div>
@@ -55,7 +56,7 @@ export function SpectatorView({
       </div>
 
       {!category && (
-        <div className="bg-blue-100 border-l-4 border-blue-500 p-4 rounded max-w-md">
+        <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500 max-w-md">
           <p className="text-blue-700 font-medium text-center">
             Esperando que {drawerUsername} tire el dado...
           </p>
@@ -63,7 +64,7 @@ export function SpectatorView({
       )}
 
       {/* Info */}
-      <div className="bg-gray-100 p-6 rounded-lg max-w-2xl">
+      <div className="bg-white p-6 rounded-lg shadow-md max-w-2xl">
         <h3 className="font-bold text-lg mb-3 text-gray-800 text-center">
           ¿Qué puedes hacer?
         </h3>
@@ -86,6 +87,7 @@ export function SpectatorView({
           </li>
         </ul>
       </div>
+    </div>
     </div>
   );
 }

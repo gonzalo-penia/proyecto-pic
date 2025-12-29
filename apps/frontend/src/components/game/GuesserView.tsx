@@ -24,8 +24,9 @@ export function GuesserView({
   hasWord,
 }: GuesserViewProps) {
   return (
-    <div className="flex flex-col items-center gap-8 p-8">
-      <div className="text-center">
+    <div className="bg-white rounded-xl shadow-xl p-8 mx-4 my-4">
+      <div className="flex flex-col items-center gap-8 p-8">
+      <div className="text-center bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-green-600 mb-2">¡Tu turno de adivinar!</h2>
         <p className="text-gray-600">
           <span className="font-semibold">{drawerUsername}</span> está dibujando
@@ -44,7 +45,7 @@ export function GuesserView({
       )}
 
       {!category && (
-        <div className="bg-blue-100 border-l-4 border-blue-500 p-4 rounded">
+        <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
           <p className="text-blue-700 font-medium">
             Esperando que {drawerUsername} tire el dado...
           </p>
@@ -62,7 +63,7 @@ export function GuesserView({
       )}
 
       {/* Instructions */}
-      <div className="bg-gray-100 p-6 rounded-lg max-w-2xl">
+      <div className="bg-white p-6 rounded-lg shadow-md max-w-2xl">
         <h3 className="font-bold text-lg mb-3 text-gray-800">Instrucciones:</h3>
         <ul className="space-y-2 text-gray-700">
           <li className="flex items-start">
@@ -83,6 +84,7 @@ export function GuesserView({
           </li>
         </ul>
       </div>
+    </div>
     </div>
   );
 }

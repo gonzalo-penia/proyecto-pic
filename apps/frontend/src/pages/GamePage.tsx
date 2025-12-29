@@ -4,8 +4,10 @@ import { useSocket } from '../contexts/SocketContext';
 import { useGame, type GameState, type TeamState } from '../contexts/GameContext';
 import { useAuth } from '../contexts/AuthContext';
 import { GameContainer, ScoreBoard, GameOverModal } from '../components/game';
+import { theme } from '../utils';
 
 export function GamePage() {
+  
   const { roomCode } = useParams<{ roomCode: string }>();
   const { socket } = useSocket();
   const { user } = useAuth();
@@ -269,23 +271,43 @@ export function GamePage() {
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 text-lg">Esperando que inicie el juego...</p>
+          <p className="text-gray-600 text-lg"> Esperando que inicie el juego...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+    <div>
+      
       {/* Header with ScoreBoard */}
-      <div className="bg-white shadow-md p-4">
-        <div className="max-w-7xl mx-auto">
-          <ScoreBoard teams={currentGameState.teams} victoryCondition={currentGameState.victoryCondition} />
-        </div>
+      
+        <div style={{
+                background: theme.colors.background.secondary,
+                padding: '5px',
+                borderRadius: '5px',
+                boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                maxWidth: '150px',
+                width: '100%',
+              }}>
+
+          <div className="max-w-7xl mx-auto">
+            <ScoreBoard teams={currentGameState.teams} 
+            victoryCondition={currentGameState.victoryCondition} />
+          </div>
+
       </div>
 
       {/* Game Area */}
-      <div className="max-w-7xl mx-auto py-8">
+      <div style={{
+                background: theme.colors.background.secondary,
+                padding: '40px',
+                borderRadius: '10px',
+                boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                maxWidth: '400px',
+                width: '100%'
+              }}>
+
         <GameContainer
           onRollDice={handleRollDice}
           onMarkGuessed={handleMarkGuessed}
