@@ -21,7 +21,7 @@ export default function LoginPage() {
 
     try {
       await login({ username, password });
-      // Redirigir al dashboard después del login exitoso
+      // Redirigir al dashboard después del login exitosooo
       navigate('/dashboard');
     } catch (err: any) {
       console.error('Login error:', err);
